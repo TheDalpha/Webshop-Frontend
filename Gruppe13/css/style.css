@@ -498,7 +498,6 @@ hr{
 /* ----------FOOTER START---------- */
 footer{
     grid-area: ft;
-    height: 10000px;
     display:grid;
     grid-template-rows: repeat(12, 1fr);
     grid-template-columns: repeat(12, 1fr)
