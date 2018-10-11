@@ -1,7 +1,7 @@
 function listProducts() {
     // Call Web API to get a list of post
     $.ajax({
-        url: 'https://omatableseasv2.azurewebsites.net',
+        url: 'https://omatableseasv2.azurewebsites.net/api/products',
         type: 'GET',
         dataType: 'json',
         success: function (products) {
@@ -76,13 +76,13 @@ $('#myForm').on('submit',function(e){
 
 
 $.ajax({
-    url: "https://omatableseasv2.azurewebsites.net",
+    url: "https://omatableseasv2.azurewebsites.net/api/products",
     type: 'POST',
     data: JSON.stringify({
         "Name": name,
         "Price": price,
         "ImageLink": imageLink,
-        "Desciption": description,
+        "Description": description,
         "Quantity": quantity,
         "Height": height,
         "Width": width,
@@ -96,4 +96,5 @@ $.ajax({
     error: function (request, message, error) {
         handleException(request, message, error);
     }
+});
 });
