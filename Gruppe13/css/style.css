@@ -298,21 +298,18 @@ main{
     max-width: 467px;
     display:flex;
 }
-
 #boxprice2{
     background-image:url("../img/boxsign.jpg");
     height: 70px;
     max-width: 467px;
     display:flex;
 }
-
 #boxprice3{
     background-image:url("../img/boxsign.jpg");
     height: 70px;
     max-width: 467px;
     display:flex;
 }
-
 #boxprice4{
     background-image:url("../img/boxsign.jpg");
     height: 70px;
@@ -320,14 +317,12 @@ main{
     margin-top: 20px;
     display:flex;
 }
-
 #boxprice5{
     background-image:url("../img/boxsign.jpg");
     height: 70px;
     max-width: 467px;
     display:flex;
 }
-
 #boxprice6{
     background-image:url("../img/boxsign.jpg");
     height: 70px;
@@ -336,14 +331,12 @@ main{
     
     align-content: center;
 }
-
 #boxprice7{
     background-image:url("../img/boxsign.jpg");
     height: 70px;
     max-width: 467px;
     display:flex;
 }
-
 #boxprice8{
     background-image:url("../img/boxsign.jpg");
     background-position: fixed;
@@ -351,7 +344,6 @@ main{
     max-width: 467px;
     display:flex;
 }
-
 #line1prod{
 color: #F2E4D8;
 padding-left: 20px;
@@ -364,6 +356,9 @@ a{
     color: #F2E4D8;
     font-size: large;
     text-decoration: none;
+}
+#next_page3{
+    border: 1px solid #000000;
 }
 
 /* -------SHOP PAGE END----------*/
@@ -419,12 +414,30 @@ hr{
 
    
 }
+.pagebox{
+    grid-column: 6/8;
+    grid-row: 10/11;
+    display: inline;
+
+}
+
+.pgs{
+    color: #402921;
+}
+
+.pagebox ul li a{
+    color: #402921;
+    grid-column: 5/6;
+    font-size: 35px;
+    padding-right: 20px;
+}
 
 #purchasebut1{
     position: absolute;
     bottom:0;
     left:0;
 }
+
 
 #button1 {
     display: inline-block;
