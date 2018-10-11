@@ -478,8 +478,8 @@ hr{
 /* -----------Cart Start ---------- */
 
 #cart1{
-    grid-column: 4/10;
-    grid-row: 2/12;
+    grid-column: 1/13;
+    grid-row: 1/2000;
     background-color: #F2E4D8;
     border: 1px solid #402921;
     background-image:url("../img/Nope.jpg")
