@@ -477,23 +477,13 @@ hr{
 
 /* -----------Cart Start ---------- */
 
-#cart1{
+.cart1{
     grid-column: 1/13;
     grid-row: 1/2000;
     background-color: #F2E4D8;
     border: 1px solid #402921;
     background-image:url("../img/Nope.jpg")
 
-
-}
-
-
-
-#cart3{
-
-}
-
-#cart4{
 
 }
 
