@@ -487,9 +487,7 @@ hr{
 
 }
 
-#cart2{
 
-}
 
 #cart3{
 
@@ -510,6 +508,14 @@ hr{
 /* ----------FOOTER START---------- */
 footer{
     grid-area: ft;
-  
+    height: 10000px;
+    display:grid;
+    grid-template-rows: repeat(12, 1fr);
+    grid-template-columns: repeat(12, 1fr)
 }
 
+#cart2{
+    grid-column: 1/13;
+    grid-row: 1/2000;
+    background-image:url("../img/Nope.jpg")
+}
