@@ -416,7 +416,7 @@ hr{
 }
 .pagebox{
     grid-column: 6/8;
-    grid-row: 10/11;
+    grid-row: 1/11;
     display: inline;
 
 }

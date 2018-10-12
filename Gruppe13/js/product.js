@@ -1,59 +1,47 @@
-function listProducts() {
+var pageNr = 1;
+
+listProducts(pageNr);
+
+function listProducts(pageNr) {
     // Call Web API to get a list of post
     $.ajax({
-        url: 'https://omatableseasv2.azurewebsites.net/api/products',
+        url: 'https://omatableseasv2.azurewebsites.net/api/products/?CurrentPage=' + pageNr + '&ItemsPerPage=8',
         type: 'GET',
         dataType: 'json',
         success: function (products) {
-            onGetCustomersSuccess(products);
-        },
-        error: function (request, message, error) {
-            handleException(request, message, error);
+            $("#page_box").empty().append("<a>page " + pageNr + " of 2</a>")
+            onGetProductSuccess(products);
         }
     });
 }
 
 function onGetProductSuccess(products) {
-    if ($("#productsTable tbody").length == 0) {
-        $("#productsTable").append("<tbody></tbody>");
-    }
-    $("#productsTable tbody").empty();
+    $("#product_area").empty();
     // Iterate over the collection of data
     $.each(products, function (index, products) {
         // Add a row to the post table
-        addProductRow(products);
+        addProductsRow(products, index+1);
     });
 }
 
-function addProductsRow(products) {
+function addProductsRow(products, itemNr) {
     // Check if <tbody> tag exists, add one if not
     // Append row to <table>
-    $("#productsTable tbody").append(
-        buildProductRow(products));
+    $("#product_area").append(
+        buildProductsRow(products, itemNr));
 }
 
-function buildProductsRow(products) {
-    var ret =
-        "<tr>" +
-        "<td>" + products.id + "</td>" +
-        "<td>" + products.firstName + "</td>" +
-        "<td>" + products.lastName + "</td>" +
-        "<td>" + products.address + "</td>" +
-        "<td>" +
-        "<button type='button' " +
-        "class='btn btn-info' " +
-        "data-id='" + products.id + "'>" +
-        "<i class='fas fa-info-circle'></i>" +
-        "</button>" +
-        "</td >" +
-        "<td>" +
-        "<button type='button' " +
-        "class='btn btn-danger' " +
-        "data-id='" + products.id + "'>" +
-        "<i class='fas fa-minus-circle'></i>" +
-        "</button>" +
-        "</td >" +
-        "</tr>";
+function buildProductsRow(products, itemNr) {
+    var ret ="<div id=\"item" + itemNr + "\">\n" +
+        "    <div id=\"pic1\"></div>\n" +
+        "    <div id=\"boxprice1\">\n" +
+        "        <div id=\"pricetxt1\">\n" +
+        "            <p id=\"line1prod\">\n" +
+        "                    <a href=\"table1.html?id="+ products.id +"\">" + products.name + "</a>\n" +
+        "            </p>\n" +
+        "        </div>\n" +
+        "    </div>\n" +
+        "</div>"
     return ret;
 }
 
@@ -98,3 +86,23 @@ $.ajax({
     }
 });
 });
+
+$("#pageLeft").on("click", function (e) {
+    e.preventDefault();
+    if (pageNr <= 1) {
+        return;
+    } else {
+        pageNr = pageNr - 1;
+        listProducts(pageNr);
+    }
+});
+
+$("#pageRight").on("click", function (e) {
+    e.preventDefault();
+    if (pageNr > 9999) {
+        return;
+    } else {
+        pageNr = pageNr + 1;
+        listProducts(pageNr);
+    }
+})
